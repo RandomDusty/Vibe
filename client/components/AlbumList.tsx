@@ -45,4 +45,6 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
     );
 });
 
+AlbumList.displayName = 'AlbumList';
+
 export default AlbumList;

@@ -87,9 +87,9 @@ const Player = memo(() => {
         }
     }
 
-    const changeVolume = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        audio.volume = Number(e.target.value) / 100;
-        setVolume(Number(e.target.value));
+    const changeVolume = (e: Event, value: number): void => {
+        audio.volume = Number(value) / 100;
+        setVolume(Number(value));
     }
 
     const changeCurrentTime = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -190,5 +190,7 @@ const Player = memo(() => {
             </Widget>
     );
 });
+
+Player.displayName = 'Player';
 
 export default Player;

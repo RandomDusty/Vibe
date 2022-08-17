@@ -2,13 +2,18 @@ import React, {memo, PropsWithChildren} from 'react';
 import Navbar from '../components/Navbar'
 import {Container} from "@mui/material";
 import Player from "../components/Player";
+import Head from "next/head";
 
-interface Props {
+interface MainLayoutProps {
+    title?: string;
 }
 
-const MainLayout: React.FC<PropsWithChildren<Props>> = memo(({children}) => {
+const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children, title}) => {
     return (
         <>
+            <Head>
+                <title>{title || 'Vibe'}</title>
+            </Head>
             <Navbar/>
                 <Container style={{marginTop: '100px'}}>
                     {children}

@@ -20,7 +20,7 @@ const theme = createTheme({
 
 const Index = ({tracks}) => {
     return (
-        <MainLayout>
+        <MainLayout title='Cписок треков'>
             <Grid container justifyContent='center'>
                 <Card style={{width: '1350px', backgroundColor: '#1f1f1f', color: '#fffcff'}}>
                     <Box p={1}>

@@ -71,4 +71,6 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
     );
 });
 
+TrackItem.displayName = 'TrackItem';
+
 export default TrackItem;

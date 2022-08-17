@@ -10,7 +10,7 @@ import axios from "axios";
 
 const Index = ({albums}) => {
     return (
-        <MainLayout>
+        <MainLayout title='Cписок альбомов'>
             <Grid container justifyContent='center'>
                 <Card style={{width: '1350px', backgroundColor: '#1f1f1f', color: '#fffcff'}}>
                     <Box p={1}>

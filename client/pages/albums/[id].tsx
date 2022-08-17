@@ -19,7 +19,7 @@ const AlbumPage:React.FC<AlbumPageProps> = ({album,page}) => {
     const router = useRouter();
 
     return (
-        <MainLayout>
+        <MainLayout title={'Альбом ' + album.name}>
             <Grid container justifyContent='center'>
                 <Card style={{width: '1350px', backgroundColor: '#1f1f1f', color: '#fffcff'}}>
 

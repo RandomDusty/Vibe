@@ -48,6 +48,8 @@ const Index: React.FC<AlbumListProps> = memo(({albums}) => {
     );
 });
 
+Index.displayName = 'Index';
+
 export default Index;
 
 

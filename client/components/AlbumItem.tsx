@@ -39,4 +39,6 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     );
 });
 
+AlbumItem.displayName = 'AlbumItem';
+
 export default AlbumItem;

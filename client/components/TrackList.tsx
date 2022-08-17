@@ -44,4 +44,6 @@ const TrackList: React.FC<TrackListProps> = memo(({tracks}) => {
     );
 });
 
+TrackList.displayName = 'TrackList';
+
 export default TrackList;
