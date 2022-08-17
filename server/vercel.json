@@ -2,6 +2,7 @@
 {
   "version": 2,
   "env": {
+    "MONGO_URI": "https://data.mongodb-api.com/app/data-yvknt/endpoint/data/v1"
   },
   "builds": [
     {
