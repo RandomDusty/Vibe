@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@mui/material": "^5.9.3",
     "@types/react-redux": "^7.1.24",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "next": "12.2.4",
     "next-redux-wrapper": "^7.0.5",
     "react": "18.2.0",
