@@ -1,0 +1,42 @@
+.track{
+  background: inherit;
+  color: inherit;
+  padding: 10px;
+  display: flex;
+  box-shadow: inherit;
+}
+
+.activeTrack{
+  background: #2b2b2b;
+  color: inherit;
+  padding: 10px;
+  display: flex;
+  box-shadow: inherit;
+  .playIcon {
+    visibility: visible;
+  }
+}
+
+.track:hover,
+.activeTrack:hover {
+  background: #2b2b2b;
+  cursor: pointer;
+  .playIcon {
+    visibility: visible;
+  }
+
+  .deleteIcon {
+    visibility: visible;
+  }
+}
+
+.playIcon {
+  position: absolute;
+  visibility: hidden;
+  padding: 13px;
+}
+
+.deleteIcon {
+  margin-left: auto;
+  visibility: hidden;
+}

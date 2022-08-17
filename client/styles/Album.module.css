@@ -1,0 +1,22 @@
+.albumItem {
+    background-color: #1f1f1f;
+    color: #fffcff;
+    box-shadow: none;
+    padding: 10px
+}
+
+.albumItem:hover{
+    background: #2b2b2b;
+    cursor: pointer;
+}
+
+.albumList {
+    height: 70vh;
+    overflow: auto;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
