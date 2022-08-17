@@ -45,7 +45,7 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
                         <CardMedia
                             component="img"
                             sx={{width: 70, height: 70}}
-                            image={'http://localhost:5000/' + track.picture}
+                            image={'https://tranquil-savannah-92743.herokuapp.com/' + track.picture}
                         />
                         <IconButton disableRipple aria-label="play/pause" color="primary" className={styles.playIcon}>
                                 {pause

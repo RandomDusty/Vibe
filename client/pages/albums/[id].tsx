@@ -53,7 +53,7 @@ const AlbumPage:React.FC<AlbumPageProps> = ({album,page}) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({params}) => {
-    const response = await axios.get('http://localhost:5000/albums/' + params.id)
+    const response = await axios.get('https://tranquil-savannah-92743.herokuapp.com/albums/' + params.id)
     return {
         props: {
             album: response.data

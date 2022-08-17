@@ -54,7 +54,7 @@ const Index = ({tracks}) => {
 
 export async function getServerSideProps(context) {
     fetchTracks();
-    const response = await axios.get('http://localhost:5000/tracks', {
+    const response = await axios.get('https://tranquil-savannah-92743.herokuapp.com/tracks', {
         params: {
             count: 30,
             offset: 0

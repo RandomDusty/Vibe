@@ -23,7 +23,7 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
                 <CardMedia
                     component="img"
                     className={page=='main'?mainPageStyles.image: styles.image}
-                    image={'http://localhost:5000/' + album.picture}
+                    image={'https://tranquil-savannah-92743.herokuapp.com/' + album.picture}
                 />
                 <CardContent sx={{margin: 'auto'}}>
                     <Typography noWrap variant='overline'>

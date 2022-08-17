@@ -68,7 +68,7 @@ const Player = memo(() => {
 
     const setAudio = () => {
         if (active) {
-            audio.src = 'http://localhost:5000/' + active.audio;
+            audio.src = 'https://tranquil-savannah-92743.herokuapp.com/' + active.audio;
             audio.volume = volume / 100;
             audio.onloadedmetadata = () => {
                 setDuration(Math.ceil(audio.duration));
@@ -141,7 +141,7 @@ const Player = memo(() => {
                         <CardMedia
                             component="img"
                             sx={{width: 70, height: 70}}
-                            image={'http://localhost:5000/' + active?.picture}
+                            image={'https://tranquil-savannah-92743.herokuapp.com/' + active?.picture}
                         />
                         <Box ml={3} mt={2}>
                             <Box>

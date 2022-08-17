@@ -39,7 +39,7 @@ const Index = ({albums}) => {
 };
 
 export async function getServerSideProps(context) {
-    const response = await axios.get('http://localhost:5000/albums',{
+    const response = await axios.get('https://tranquil-savannah-92743.herokuapp.com/albums',{
         params: {
             count: 30,
             offset: 0
