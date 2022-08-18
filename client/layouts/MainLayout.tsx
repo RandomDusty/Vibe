@@ -11,19 +11,6 @@ interface MainLayoutProps {
 const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children, title}) => {
     return (
         <>
-            <Head>
-                <title>{title || 'Vibe'}</title>
-            </Head>
-            <Navbar/>
-                <Container style={{marginTop: '100px'}}>
-                    {children}
-
-                </Container>
-            <div className='player'>
-                <Player/>
-            </div>
-
-
             <style jsx global>{`
               body {
                 background: #141414;
@@ -55,6 +42,19 @@ const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children
                     
               }
             `}</style>
+
+            <Head>
+                <title>{title || 'Vibe'}</title>
+            </Head>
+            <Navbar/>
+                <Container style={{marginTop: '100px'}}>
+                    {children}
+                </Container>
+            <div className='player'>
+                <Player/>
+            </div>
+
+
 
         </>
     );

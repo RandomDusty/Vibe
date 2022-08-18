@@ -5,7 +5,7 @@ import {Card, CardContent, Grid} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import styles from '../styles/Album.module.css'
+import styles from '../styles/Album.module.scss'
 import {useRouter} from "next/router";
 import mainPageStyles from '../styles/MainPageAlbumList.module.scss'
 
@@ -23,7 +23,7 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
                 <CardMedia
                     component="img"
                     className={page=='main'?mainPageStyles.image: styles.image}
-                    image={album.picture}
+                    image={'../static/' + album.picture}
                 />
                 <CardContent sx={{margin: 'auto'}}>
                     <Typography noWrap variant='overline'>

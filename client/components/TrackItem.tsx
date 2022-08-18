@@ -44,7 +44,7 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
                         <CardMedia
                             component="img"
                             sx={{width: 70, height: 70}}
-                            image={'/static/Techies_icon.png'}
+                            image={'../static/' + track.picture}
                         />
                         <IconButton disableRipple aria-label="play/pause" color="primary" className={styles.playIcon}>
                                 {pause

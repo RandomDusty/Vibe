@@ -142,7 +142,7 @@ const Player = memo(() => {
                         <CardMedia
                             component="img"
                             sx={{width: 70, height: 70}}
-                            image={'https://tranquil-savannah-92743.herokuapp.com/' + active?.picture}
+                            image={'../static/' + + active?.picture}
                         />
                         <Box ml={3} mt={2}>
                             <Box>

@@ -4,7 +4,7 @@ import {Box, Card, CardContent, Grid} from "@mui/material";
 import {IAlbum} from "../types/album";
 import AlbumItem from "./AlbumItem";
 import mainPageStyles from '../styles/MainPageAlbumList.module.scss'
-import styles from '../styles/Album.module.css'
+import styles from '../styles/Album.module.scss'
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import {useRouter} from "next/router";
@@ -29,8 +29,8 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
                         />
                     )}
                     {page == 'main'
-                        ? <Grid item xs={page=='main'?8:4} sx={{margin: 'auto'}}>
-                            <Card className={page=='main'?mainPageStyles.albumItem:styles.albumItem} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
+                        ? <Grid item xs={8} sx={{margin: 'auto'}}>
+                            <Card className={mainPageStyles.albumItem} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
                                 <CardContent >
                                     <Typography  variant='overline'>
                                         <b style={{textAlign: 'center'}}>Все альбомы </b>
