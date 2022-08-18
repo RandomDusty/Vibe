@@ -30,7 +30,7 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
                     )}
                     {page == 'main'
                         ? <Grid item xs={8} sx={{margin: 'auto'}}>
-                            <Card className={mainPageStyles.albumItem} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
+                            <Card className={mainPageStyles.allAlbumButton} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
                                 <CardContent >
                                     <Typography  variant='overline'>
                                         <b style={{textAlign: 'center'}}>Все альбомы </b>

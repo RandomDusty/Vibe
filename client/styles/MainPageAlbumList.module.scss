@@ -9,8 +9,18 @@
   color: inherit;
   box-shadow: none;
   padding: 10px;
+  height: 280px;
+  width: 250px;
+  box-sizing: content-box;
 }
 
+.allAlbumButton {
+  background: inherit;
+  color: inherit;
+  box-shadow: none;
+}
+
+.allAlbumButton:hover,
 .albumItem:hover{
   background: #2b2b2b;
   cursor: pointer;
