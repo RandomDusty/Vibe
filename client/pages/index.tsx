@@ -34,12 +34,8 @@ const Index: React.FC<AlbumListProps> = memo(({albums}) => {
                 </div>
             </MainLayout>
 
-            <style jsx global>
+            <style jsx>
                 {` 
-                  body {
-                        background: #141414;
-                        color: #fffcff;              
-                      }
                   .center {
                     display: flex;
                     flex-direction: column;
