@@ -54,8 +54,6 @@ const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children
                 <Player/>
             </div>
 
-
-
         </>
     );
 });

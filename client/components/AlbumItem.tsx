@@ -18,11 +18,11 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     const router = useRouter();
 
     return (
-        <Grid item xs={page=='main'?8:4} >
+        <Grid item xs={page=='main'?8:4} sx={{background: "inherit", color: "inherit"}}>
             <Card className={page=='main'?mainPageStyles.albumItem:styles.albumItem} onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
                 <CardMedia
                     component="img"
-                    className={page=='main'?mainPageStyles.image: styles.image}
+                    sx={{width: 200, height: 200, margin: "auto"}}
                     image={'../static/' + album.picture}
                 />
                 <CardContent sx={{margin: 'auto'}}>
