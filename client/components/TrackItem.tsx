@@ -13,7 +13,6 @@ import {memo, useEffect, useState} from "react";
 import {useActions} from "../hooks/useActions";
 import {useTypeSelector} from "../hooks/useTypeSelector";
 
-
 interface TrackItemProps {
     track: ITrack;
     active?: boolean;
@@ -45,7 +44,7 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
                         <CardMedia
                             component="img"
                             sx={{width: 70, height: 70}}
-                            image={'../media/' + track.picture}
+                            image={'/static/Techies_icon.png'}
                         />
                         <IconButton disableRipple aria-label="play/pause" color="primary" className={styles.playIcon}>
                                 {pause

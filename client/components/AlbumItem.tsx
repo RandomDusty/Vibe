@@ -23,7 +23,7 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
                 <CardMedia
                     component="img"
                     className={page=='main'?mainPageStyles.image: styles.image}
-                    image={'/media/' + album.picture}
+                    image={album.picture}
                 />
                 <CardContent sx={{margin: 'auto'}}>
                     <Typography noWrap variant='overline'>

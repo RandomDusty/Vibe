@@ -68,7 +68,8 @@ const Player = memo(() => {
 
     const setAudio = () => {
         if (active) {
-            audio.src = 'https://tranquil-savannah-92743.herokuapp.com/' + active.audio;
+            // audio.src = 'https://tranquil-savannah-92743.herokuapp.com/' + active.audio;
+            audio.src = '../static/' + active.audio
             audio.volume = volume / 100;
             audio.onloadedmetadata = () => {
                 setDuration(Math.ceil(audio.duration));
