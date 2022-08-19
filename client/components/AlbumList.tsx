@@ -22,11 +22,13 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
         <React.Suspense fallback={<Loader height={150} width='1350px'/>}>
             <Grid  container direction={page != 'main'?'row':'column'} spacing={4} columns={page == 'main'?32:16} className={page == 'main'?mainPageStyles.albumList:styles.albumList}>
                 {albums.map(album => {
-                            return <AlbumItem
-                                key={album._id}
-                                album={album}
-                                page={page ? page : ''}
-                            />
+                            return <Grid item xs={page=='main'?8:4}>
+                                    <AlbumItem
+                                            key={album._id}
+                                            album={album}
+                                            page={page ? page : ''}
+                                        />
+                                </Grid>
                     })
                 }
                     {page == 'main'
