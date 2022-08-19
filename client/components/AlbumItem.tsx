@@ -18,7 +18,6 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     const router = useRouter();
 
     return (
-        <Grid item xs={page=='main'?8:4} className={styles.gridItem}>
             <Card className={page=='main'?mainPageStyles.albumItem:styles.albumItem} onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
                 <CardMedia
                     component="img"
@@ -35,7 +34,6 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
                     </Typography>
                 </CardContent>
             </Card>
-        </Grid>
     );
 });
 
