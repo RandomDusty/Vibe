@@ -20,7 +20,7 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
 
     return (
         <React.Suspense fallback={<Loader height={150} width='1350px'/>}>
-            <Grid  container direction={page != 'main'?'row':'column'} spacing={4} columns={page == 'main'?32:16} className={page == 'main'?mainPageStyles.albumList:styles.albumList}>
+            <Grid  sx={{}} container direction={page != 'main'?'row':'column'} spacing={4} columns={page == 'main'?32:16} className={page == 'main'?mainPageStyles.albumList:styles.albumList}>
                 {albums.map(album => {
                             return <AlbumItem
                                             key={album._id}

@@ -18,8 +18,8 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     const router = useRouter();
 
     return (
-        <Grid item xs={page=='main'?8:4} className={page=='main'?mainPageStyles.albumItem:styles.albumItem}>
-            <Card
+        <Grid item xs={page=='main'?8:4} sx={{}}>
+            <Card className={page=='main'?mainPageStyles.albumItem:styles.albumItem}
                   onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
                 <CardMedia
                     component="img"
