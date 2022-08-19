@@ -1,8 +1,9 @@
 import React, {memo, PropsWithChildren} from 'react';
 import Navbar from '../components/Navbar'
-import {Container} from "@mui/material";
+import {Card, Container} from "@mui/material";
 import Player from "../components/Player";
 import Head from "next/head";
+import {styled} from "@mui/material/styles";
 
 interface MainLayoutProps {
     title?: string;
@@ -10,7 +11,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children, title}) => {
     return (
-        <>
+        <React.Fragment>
             <style jsx global>{`
               body {
                 background: #141414;
@@ -56,7 +57,7 @@ const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = memo(({children
                 <Player/>
             </div>
 
-        </>
+        </React.Fragment>
     );
 });
 

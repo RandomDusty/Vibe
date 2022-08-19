@@ -1,13 +1,9 @@
 import React, {memo} from 'react';
-import {ITrack} from "../types/track";
 import {IAlbum} from "../types/album";
 import {Card, CardContent, Grid} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import styles from '../styles/Album.module.scss'
 import {useRouter} from "next/router";
-import mainPageStyles from '../styles/MainPageAlbumList.module.scss'
 import {styled} from "@mui/material/styles";
 
 interface AlbumItemProps {
@@ -15,20 +11,27 @@ interface AlbumItemProps {
     page?: string;
 }
 
-const MyCard = styled(Card)(() => ({
-    backgroundColor: "#1f1f1f",
-    padding: '10px',
-    color: "#fffcff",
-    boxShadow: "none",
-}));
+
+const MyCard = styled(Card)`
+  background-color: #1f1f1f;
+  padding: 10px;
+  color: #fffcff;
+  box-shadow: none;
+  height: 280px;
+  width: 250px;
+  
+  :hover{
+    background: #2b2b2b;
+    cursor: pointer;
+  }
+`;
 
 const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     const router = useRouter();
 
     return (
-        <Grid item xs={page=='main'?8:4} sx={{}}>
-            <MyCard
-                  onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
+        <Grid item xs={page=='main'?8:4}>
+            <MyCard onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })} sx={{}}>
                 <CardMedia
                     component="img"
                     sx={{width: 200, height: 200, margin: "auto"}}
