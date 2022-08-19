@@ -10,8 +10,6 @@ interface TrackListProps {
     tracks: ITrack[];
 }
 
-
-
 const TrackList: React.FC<TrackListProps> = memo(({tracks}) => {
     const {active, pause, playlist} = useTypeSelector(state => state.player);
     const {setPlaylist, setNextPlaylist} = useActions();

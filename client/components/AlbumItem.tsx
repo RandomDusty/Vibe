@@ -5,6 +5,7 @@ import {Card, CardContent, Grid} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import styles from '../styles/Album.module.scss'
 import {useRouter} from "next/router";
 import mainPageStyles from '../styles/MainPageAlbumList.module.scss'
 
@@ -18,7 +19,10 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
 
     return (
         <Grid item xs={page=='main'?8:4}>
-            <Card className={mainPageStyles.albumItem} onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
+            <Card className={page=='main'?mainPageStyles.albumItem:styles.albumItem} onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })}>
+                <Box>
+
+
                 <CardMedia
                     component="img"
                     sx={{width: 200, height: 200, margin: "auto"}}
@@ -33,6 +37,7 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
                         {album.artist}
                     </Typography>
                 </CardContent>
+                </Box>
             </Card>
         </Grid>
     );
