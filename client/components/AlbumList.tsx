@@ -21,26 +21,27 @@ const AlbumList: React.FC<AlbumListProps> = memo(({albums, page}) => {
     return (
         <React.Suspense fallback={<Loader height={150} width='1350px'/>}>
             <Grid  container direction={page != 'main'?'row':'column'} spacing={4} columns={page == 'main'?32:16} className={page == 'main'?mainPageStyles.albumList:styles.albumList}>
-                    {albums.map(album => {
+                {albums.map(album => {
                             return <AlbumItem
                                 key={album._id}
                                 album={album}
                                 page={page ? page : ''}
                             />
-                        }
-                    )}
-                    {page == 'main'
-                        ? <Grid item xs={8} sx={{margin: 'auto'}}>
-                            <Card className={mainPageStyles.allAlbumButton} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
-                                <CardContent >
-                                    <Typography  variant='overline'>
-                                        <b style={{textAlign: 'center'}}>Все альбомы </b>
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        : <div></div>
-                    }
+                        })
+                    // )}
+                    // {page == 'main'
+                    //     ? <Grid item xs={8} sx={{margin: 'auto'}}>
+                    //         <Card className={mainPageStyles.allAlbumButton} onClick={() => router.push('/albums/', undefined, { shallow: true })}>
+                    //             <CardContent >
+                    //                 <Typography  variant='overline'>
+                    //                     <b style={{textAlign: 'center'}}>Все альбомы </b>
+                    //                 </Typography>
+                    //             </CardContent>
+                    //         </Card>
+                    //     </Grid>
+                    //     : <div></div>
+                    // }
+                }
             </Grid>
         </React.Suspense>
     );
