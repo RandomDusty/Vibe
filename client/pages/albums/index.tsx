@@ -25,13 +25,13 @@ const Index = ({albums}) => {
 
             <style jsx>
                 {`
-                    .center {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;  
-                    }
-                    
+                  .center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                  }
+
                 `}
             </style>
         </MainLayout>
@@ -39,11 +39,12 @@ const Index = ({albums}) => {
 };
 
 export async function getServerSideProps(context) {
-    const response = await axios.get('https://tranquil-savannah-92743.herokuapp.com/albums',{
+    const response = await axios.get('https://tranquil-savannah-92743.herokuapp.com/albums', {
         params: {
             count: 30,
             offset: 0
-        }});
+        }
+    });
     const albums = response.data;
     return {
         props: {albums}

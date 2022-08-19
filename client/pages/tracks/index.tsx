@@ -17,7 +17,6 @@ const theme = createTheme({
 });
 
 
-
 const Index = ({tracks}) => {
     return (
         <MainLayout title='Cписок треков'>
@@ -32,20 +31,20 @@ const Index = ({tracks}) => {
                             {/*</ThemeProvider>*/}
                         </Grid>
                     </Box>
-                     <TrackList tracks={tracks}/>
+                    <TrackList tracks={tracks}/>
                 </Card>
             </Grid>
 
 
             <style jsx>
                 {`
-                    .center {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;  
-                    }
-                    
+                  .center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                  }
+
                 `}
             </style>
         </MainLayout>
@@ -58,7 +57,8 @@ export async function getServerSideProps(context) {
         params: {
             count: 30,
             offset: 0
-        }});
+        }
+    });
     const tracks = response.data
     return {
         props: {tracks}

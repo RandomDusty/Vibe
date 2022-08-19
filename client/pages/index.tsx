@@ -27,7 +27,7 @@ const Index: React.FC<AlbumListProps> = memo(({albums}) => {
                                         <h2><AlbumIcon style={{verticalAlign: 'middle'}}/> Список альбомов</h2>
                                     </Grid>
                                 </Box>
-                                    <AlbumList albums={albums} page='main'/>
+                                <AlbumList albums={albums} page='main'/>
                             </Card>
                         </Grid>
                     </div>
@@ -35,7 +35,7 @@ const Index: React.FC<AlbumListProps> = memo(({albums}) => {
             </MainLayout>
 
             <style jsx>
-                {` 
+                {`
                   .center {
                     display: flex;
                     flex-direction: column;
@@ -58,7 +58,8 @@ export async function getServerSideProps(context) {
         params: {
             count: 6,
             offset: 0
-        }});
+        }
+    });
     const albums = response.data;
     return {
         props: {albums}

@@ -24,7 +24,7 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
     const {playTrack, pauseTrack, setActiveTrack, setPlaylist} = useActions();
     const {playlist, nextPlaylist} = useTypeSelector(state => state.player)
 
-    const play =  () => {
+    const play = () => {
         if (playlist != nextPlaylist) {
             setPlaylist(tracks);
             setActiveTrack(nextPlaylist.find((val) => val == track));
@@ -38,33 +38,33 @@ const TrackItem: React.FC<TrackItemProps> = memo(({track, active, pause, tracks}
     }
 
     return (
-        <Card className={active?styles.activeTrack:styles.track} onClick={play}>
+        <Card className={active ? styles.activeTrack : styles.track} onClick={play}>
             <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                    <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 1}}>
-                        <CardMedia
-                            component="img"
-                            sx={{width: 70, height: 70}}
-                            image={'../static/' + track.picture}
-                        />
-                        <IconButton disableRipple aria-label="play/pause" color="primary" className={styles.playIcon}>
-                                {pause
-                                ? <PlayCircleIcon sx={{height: 38, width: 38}}/>
-                                : <PauseCircleIcon sx={{height: 38, width: 38 }}/>
-                                }
-                        </IconButton>
-                        <Box ml={2}>
-                            <Typography component="div" variant="h5">
-                               <b>{track.name}</b>
-                            </Typography>
-                            <Typography variant="subtitle1" color="inherit" component="div">
-                                {track.artist}
-                            </Typography>
+                <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 1}}>
+                    <CardMedia
+                        component="img"
+                        sx={{width: 70, height: 70}}
+                        image={'../static/' + track.picture}
+                    />
+                    <IconButton disableRipple aria-label="play/pause" color="primary" className={styles.playIcon}>
+                        {pause
+                            ? <PlayCircleIcon sx={{height: 38, width: 38}}/>
+                            : <PauseCircleIcon sx={{height: 38, width: 38}}/>
+                        }
+                    </IconButton>
+                    <Box ml={2}>
+                        <Typography component="div" variant="h5">
+                            <b>{track.name}</b>
+                        </Typography>
+                        <Typography variant="subtitle1" color="inherit" component="div">
+                            {track.artist}
+                        </Typography>
 
-                        </Box>
-                        {/*<IconButton color='inherit' className={styles.deleteIcon}>*/}
-                        {/*    <Delete/>*/}
-                        {/*</IconButton>*/}
                     </Box>
+                    {/*<IconButton color='inherit' className={styles.deleteIcon}>*/}
+                    {/*    <Delete/>*/}
+                    {/*</IconButton>*/}
+                </Box>
             </Box>
         </Card>
     );

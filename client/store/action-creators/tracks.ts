@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const fetchTracks = () => {
     return async (dispatch: Dispatch<TrackAction>) => {
-        try{
+        try {
             const response = await axios.get('http://localhost:5000/tracks');
             dispatch({
                 type: TrackActionType.FETCH_TRACKS,

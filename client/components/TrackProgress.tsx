@@ -18,7 +18,7 @@ const TinyText = styled(Typography)({
     marginLeft: '10px'
 });
 
-const TrackProgress: React.FC<TrackProgressProps> = ({left,right,onChange}) => {
+const TrackProgress: React.FC<TrackProgressProps> = ({left, right, onChange}) => {
     function formatDuration(value: number) {
         const minute = Math.floor(value / 60);
         const secondLeft = value - minute * 60;
@@ -27,7 +27,7 @@ const TrackProgress: React.FC<TrackProgressProps> = ({left,right,onChange}) => {
 
 
     return (
-        <div style={{display: 'flex'}} >
+        <div style={{display: 'flex'}}>
             <Slider
                 aria-label="time-indicator"
                 size="small"

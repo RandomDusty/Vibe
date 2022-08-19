@@ -19,8 +19,8 @@ const MyCard = styled(Card)`
   box-shadow: none;
   height: 280px;
   width: 250px;
-  
-  :hover{
+
+  :hover {
     background: #2b2b2b;
     cursor: pointer;
   }
@@ -30,8 +30,8 @@ const AlbumItem: React.FC<AlbumItemProps> = memo(({album, page}) => {
     const router = useRouter();
 
     return (
-        <Grid item xs={page=='main'?8:4}>
-            <MyCard onClick={() => router.push('/albums/' + album._id, undefined, { shallow: true })} sx={{}}>
+        <Grid item xs={page == 'main' ? 8 : 4}>
+            <MyCard onClick={() => router.push('/albums/' + album._id, undefined, {shallow: true})} sx={{}}>
                 <CardMedia
                     component="img"
                     sx={{width: 200, height: 200, margin: "auto"}}

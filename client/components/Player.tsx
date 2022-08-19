@@ -30,13 +30,20 @@ const Widget = styled('div')(({theme}) => ({
 
 const Player = memo(() => {
     const {active, volume, pause, currentTime, duration, prevActive, playlist} = useTypeSelector(state => state.player);
-    const {pauseTrack, playTrack, setVolume, setCurrentTime, setDuration, setPrevActiveTrack, setActiveTrack} = useActions();
+    const {
+        pauseTrack,
+        playTrack,
+        setVolume,
+        setCurrentTime,
+        setDuration,
+        setPrevActiveTrack,
+        setActiveTrack
+    } = useActions();
 
     useEffect(() => {
-        if (!audio)
-        {
+        if (!audio) {
             audio = new Audio();
-        } else if (prevActive != active){
+        } else if (prevActive != active) {
             setAudio();
             setPrevActiveTrack(active)
             playTrack();
@@ -56,7 +63,7 @@ const Player = memo(() => {
     }, [pause])
 
     useEffect(() => {
-        if(playlist && duration && currentTime == duration) {
+        if (playlist && duration && currentTime == duration) {
             const currentIndex = playlist.findIndex((val) => val == active);
             if (currentIndex != playlist.length - 1) {
                 setActiveTrack(playlist[currentIndex + 1]);
@@ -114,81 +121,81 @@ const Player = memo(() => {
     }
 
     return (
-            <Widget>
-                <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                    <Box sx={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton aria-label="previous song" onClick={prevTrack}>
-                            <FastRewindRounded fontSize="large" htmlColor="#fffcff"/>
-                        </IconButton>
-                        <IconButton
-                            aria-label={pause ? 'play' : 'pause'}
-                            onClick={play}
-                        >
-                            {pause ? (
-                                <PlayArrowRounded
-                                    sx={{fontSize: '3rem'}}
-                                    htmlColor="#fffcff"
-                                />
-                            ) : (
-                                <PauseRounded
-                                    sx={{fontSize: '3rem'}}
-                                    htmlColor='#fffcff'
-                                />
-                            )}
-                        </IconButton>
-                        <IconButton aria-label="next song" onClick={nextSong}>
-                            <FastForwardRounded fontSize="large" htmlColor="#fffcff"/>
-                        </IconButton>
-                        <CardMedia
-                            component="img"
-                            sx={{width: 70, height: 70}}
-                            image={'../static/' + active?.picture}
-                        />
-                        <Box ml={3} mt={2}>
-                            <Box>
-                                <Typography noWrap>
-                                    <b>{active?.name}</b>
-                                </Typography>
-                                <Typography color="inherit">
-                                    {active?.artist}
-                                </Typography>
-                            </Box>
-
-                            <TrackProgress left={currentTime} right={duration} onChange={changeCurrentTime}/>
-
+        <Widget>
+            <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+                <Box sx={{display: 'flex', alignItems: 'center'}}>
+                    <IconButton aria-label="previous song" onClick={prevTrack}>
+                        <FastRewindRounded fontSize="large" htmlColor="#fffcff"/>
+                    </IconButton>
+                    <IconButton
+                        aria-label={pause ? 'play' : 'pause'}
+                        onClick={play}
+                    >
+                        {pause ? (
+                            <PlayArrowRounded
+                                sx={{fontSize: '3rem'}}
+                                htmlColor="#fffcff"
+                            />
+                        ) : (
+                            <PauseRounded
+                                sx={{fontSize: '3rem'}}
+                                htmlColor='#fffcff'
+                            />
+                        )}
+                    </IconButton>
+                    <IconButton aria-label="next song" onClick={nextSong}>
+                        <FastForwardRounded fontSize="large" htmlColor="#fffcff"/>
+                    </IconButton>
+                    <CardMedia
+                        component="img"
+                        sx={{width: 70, height: 70}}
+                        image={'../static/' + active?.picture}
+                    />
+                    <Box ml={3} mt={2}>
+                        <Box>
+                            <Typography noWrap>
+                                <b>{active?.name}</b>
+                            </Typography>
+                            <Typography color="inherit">
+                                {active?.artist}
+                            </Typography>
                         </Box>
 
-                        <Stack spacing={2} direction="row" sx={{ml: 3, mr: 3}} alignItems="center">
-                            <VolumeUpRounded htmlColor="inherit"/>
-                            <Slider
-                                sx={{
-                                    color: 'inherit',
-                                    width: '100px',
-                                    '& .MuiSlider-track': {
-                                        border: 'none',
-                                    },
-                                    '& .MuiSlider-thumb': {
-                                        width: 15,
-                                        height: 15,
-                                        backgroundColor: '#fff',
-                                        '&:before': {
-                                            boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
-                                        },
-                                        '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                                            boxShadow: 'none',
-                                        },
-                                    },
-                                }}
-                                aria-labelledby="volume"
-                                valueLabelDisplay="auto"
-                                value={volume}
-                                onChange={changeVolume}
-                            />
+                        <TrackProgress left={currentTime} right={duration} onChange={changeCurrentTime}/>
 
-                        </Stack>
                     </Box>
+
+                    <Stack spacing={2} direction="row" sx={{ml: 3, mr: 3}} alignItems="center">
+                        <VolumeUpRounded htmlColor="inherit"/>
+                        <Slider
+                            sx={{
+                                color: 'inherit',
+                                width: '100px',
+                                '& .MuiSlider-track': {
+                                    border: 'none',
+                                },
+                                '& .MuiSlider-thumb': {
+                                    width: 15,
+                                    height: 15,
+                                    backgroundColor: '#fff',
+                                    '&:before': {
+                                        boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
+                                    },
+                                    '&:hover, &.Mui-focusVisible, &.Mui-active': {
+                                        boxShadow: 'none',
+                                    },
+                                },
+                            }}
+                            aria-labelledby="volume"
+                            valueLabelDisplay="auto"
+                            value={volume}
+                            onChange={changeVolume}
+                        />
+
+                    </Stack>
                 </Box>
-            </Widget>
+            </Box>
+        </Widget>
     );
 });
 

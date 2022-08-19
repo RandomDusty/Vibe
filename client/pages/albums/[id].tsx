@@ -15,7 +15,7 @@ interface AlbumPageProps {
     page?: string;
 }
 
-const AlbumPage:React.FC<AlbumPageProps> = ({album,page}) => {
+const AlbumPage: React.FC<AlbumPageProps> = ({album, page}) => {
     const router = useRouter();
 
     return (
@@ -25,8 +25,10 @@ const AlbumPage:React.FC<AlbumPageProps> = ({album,page}) => {
 
                     <Box p={1}>
                         <Grid container justifyContent='space-between'>
-                            <h2><LibraryMusicIcon style={{verticalAlign: 'middle'}}/> Список треков альбома <i>{album.name}</i></h2>
-                            <Button color='inherit' onClick={() => router.push(page != 'main'?'/albums':'/', undefined, { shallow: true })}
+                            <h2><LibraryMusicIcon style={{verticalAlign: 'middle'}}/> Список треков
+                                альбома <i>{album.name}</i></h2>
+                            <Button color='inherit'
+                                    onClick={() => router.push(page != 'main' ? '/albums' : '/', undefined, {shallow: true})}
                                     variant="outlined" startIcon={<ArrowBackIcon/>} sx={{height: '50px'}}>Назад</Button>
                         </Grid>
 
@@ -35,17 +37,16 @@ const AlbumPage:React.FC<AlbumPageProps> = ({album,page}) => {
                     <TrackList tracks={album.tracks}/>
                 </Card>
             </Grid>
-
-
+            
             <style jsx>
                 {`
-                    .center {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;  
-                    }
-                    
+                  .center {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                  }
+
                 `}
             </style>
         </MainLayout>

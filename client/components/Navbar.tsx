@@ -23,7 +23,7 @@ const drawerWidth = 240;
 function HomeIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
         </SvgIcon>
     );
 }
@@ -35,7 +35,7 @@ const menuItems = [
 ];
 
 
-const Navbar = memo( () =>{
+const Navbar = memo(() => {
     const [open, setOpen] = React.useState(false);
     const router = useRouter()
 
@@ -79,7 +79,8 @@ const Navbar = memo( () =>{
                 <Box sx={{color: '#fffcff', backgroundColor: '#141414', height: '100%'}}>
                     <List>
                         {menuItems.map(({text, href}, index) => (
-                            <ListItem disablePadding key={href} onClick={() => router.push(href, undefined, { shallow: true })}>
+                            <ListItem disablePadding key={href}
+                                      onClick={() => router.push(href, undefined, {shallow: true})}>
                                 <ListItemButton>
                                     <ListItemIcon sx={{color: '#fffcff'}}>
                                         {index == 0 ? <HomeIcon/> :
